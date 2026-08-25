@@ -357,13 +357,43 @@
   </footer>
 
   <script>
-    function startCreating() {
-      alert("AI Video Studio is coming next 🚀");
-    }
+function startCreating() {
+    const prompt = window.prompt(
+        "🎬 Create Video\n\nApne video ka idea likho:",
+        "A cinematic futuristic city at night"
+    );
 
-    function videoPrompt() {
-      alert("Video → Prompt feature is coming next 🎬");
-    }
+    if (!prompt) return;
+
+    const duration = window.prompt(
+        "⏱️ Video duration kitni chahiye? (seconds)",
+        "5"
+    );
+
+    if (!duration) return;
+
+    alert(
+        "🚀 Video project ready!\n\n" +
+        "Prompt: " + prompt + "\n" +
+        "Duration: " + duration + " seconds\n\n" +
+        "AI video generation integration next step hai."
+    );
+}
+
+function videoPrompt() {
+    const prompt = window.prompt(
+        "🎥 Video → Prompt\n\nVideo ka description ya scene batao:",
+        "A cinematic VFX scene with dramatic lighting"
+    );
+
+    if (!prompt) return;
+
+    alert(
+        "✨ Prompt created!\n\n" +
+        prompt + "\n\n" +
+        "Advanced Video → Prompt AI integration next step hai."
+    );
+}
   </script>
 
 </body>

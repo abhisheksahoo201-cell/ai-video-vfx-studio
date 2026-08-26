@@ -11,13 +11,17 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({
-    status: "Backend Running"
+    status: "Backend Running",
+    apiKeyExists: !!process.env.LUMA_API_KEY
   });
 });
 
 app.post("/generate-video", async (req, res) => {
   try {
     const { prompt } = req.body;
+
+    console.log("Prompt:", prompt);
+    console.log("API Key Found:", !!process.env.LUMA_API_KEY);
 
     const response = await fetch(
       "https://api.lumalabs.ai/dream-machine/v1/generations",
@@ -35,12 +39,19 @@ app.post("/generate-video", async (req, res) => {
 
     const data = await response.json();
 
+    console.log("Status:", response.status);
+    console.log("Response:", data);
+
     res.json(data);
 
   } catch (error) {
+
+    console.error(error);
+
     res.status(500).json({
       error: error.message
     });
+
   }
 });
 

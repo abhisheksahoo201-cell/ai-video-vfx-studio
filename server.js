@@ -15,6 +15,35 @@ app.get("/", (req, res) => {
   });
 });
 
+app.post("/generate-video", async (req, res) => {
+  try {
+    const { prompt } = req.body;
+
+    const response = await fetch(
+      "https://api.lumalabs.ai/dream-machine/v1/generations",
+      {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${process.env.LUMA_API_KEY}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          prompt: prompt
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    res.json(data);
+
+  } catch (error) {
+    res.status(500).json({
+      error: error.message
+    });
+  }
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {

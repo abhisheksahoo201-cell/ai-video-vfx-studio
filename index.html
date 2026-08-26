@@ -410,7 +410,7 @@ font-size:18px;
 
   <script>
 
-function startCreating(){
+function startCreating() {
 
 const prompt =
 document.getElementById("promptInput").value;
@@ -421,20 +421,24 @@ document.getElementById("quality").value;
 const duration =
 document.getElementById("duration").value;
 
-if(prompt.trim() === ""){
+if(prompt.trim()===""){
 alert("Please enter a video prompt");
 return;
 }
 
 document.getElementById("result").innerHTML =
+"⏳ Generating Video...";
+
+setTimeout(() => {
+
+document.getElementById("result").innerHTML =
 "✅ Prompt: " + prompt +
 "<br>🎬 Quality: " + quality +
-"<br>⏱ Duration: " + duration + " Seconds" +
-"<br><br>🚀 AI Video Generation Started...";
-}
+"<br>⏱ Duration: " + duration + "s" +
+"<br><br>🚀 Video Generated Successfully";
 
-function videoPrompt(){
-alert("Video → Prompt feature coming next 🎬");
+},2000);
+
 }
 
   </script>

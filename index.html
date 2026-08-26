@@ -713,7 +713,18 @@ font-size:18px;
 
   <script>
     function startCreating() {
-      alert("AI Video Studio is coming next 🚀");
+
+const prompt =
+document.getElementById("promptInput").value;
+
+if(prompt.trim() === ""){
+alert("Please enter a video prompt");
+return;
+}
+
+document.getElementById("result").innerHTML =
+"✅ Prompt Received: " + prompt;
+
     }
 
     function videoPrompt() {

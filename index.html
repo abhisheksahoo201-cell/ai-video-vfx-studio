@@ -299,7 +299,27 @@ html{
         Turn your ideas, images and videos into stunning AI-generated
         videos and professional VFX.
       </p>
+<textarea
+id="promptInput"
+placeholder="Describe your video idea..."
+rows="4"
+style="
+width:100%;
+max-width:650px;
+padding:15px;
+background:#111;
+border:1px solid #333;
+border-radius:12px;
+color:white;
+margin-top:20px;
+"></textarea>
 
+<div id="result"
+style="
+margin-top:20px;
+color:#c084fc;
+font-size:18px;
+"></div>
       <div class="buttons">
         <button class="btn primary" onclick="startCreating()">
           ✨ Create Video
@@ -392,43 +412,35 @@ html{
     .querySelector(".nav-links")
     .classList.toggle("show");
     }
-function startCreating() {
-    const prompt = window.prompt(
-        "🎬 Create Video\n\nApne video ka idea likho:",
-        "A cinematic futuristic city at night"
-    );
+function startCreating(){
 
-    if (!prompt) return;
+  const prompt =
+  document.getElementById("promptInput").value;
 
-    const duration = window.prompt(
-        "⏱️ Video duration kitni chahiye? (seconds)",
-        "5"
-    );
+  if(prompt.trim()===""){
+    alert("Please enter a prompt");
+    return;
+  }
 
-    if (!duration) return;
+  document.getElementById("result").innerHTML=
+  "🚀 Video Project Created:<br><br>"+prompt;
+    }
 
-    alert(
-        "🚀 Video project ready!\n\n" +
-        "Prompt: " + prompt + "\n" +
-        "Duration: " + duration + " seconds\n\n" +
-        "AI video generation integration next step hai."
-    );
-}
+function videoPrompt(){
 
-function videoPrompt() {
-    const prompt = window.prompt(
-        "🎥 Video → Prompt\n\nVideo ka description ya scene batao:",
-        "A cinematic VFX scene with dramatic lighting"
-    );
+  const prompt =
+  document.getElementById("promptInput").value;
 
-    if (!prompt) return;
+  if(prompt.trim()===""){
+    alert("Please enter a prompt");
+    return;
+  }
 
-    alert(
-        "✨ Prompt created!\n\n" +
-        prompt + "\n\n" +
-        "Advanced Video → Prompt AI integration next step hai."
-    );
-}
+  document.getElementById("result").innerHTML=
+  "🎬 AI Prompt Generated:<br><br>" +
+  "Ultra cinematic, 4K, dramatic lighting, " +
+  prompt;
+    }
   </script>
 
 </body>

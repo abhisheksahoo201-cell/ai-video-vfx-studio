@@ -11,9 +11,7 @@
       margin: 0;
       padding: 0;
     }
-html{
-  scroll-behavior:smooth;
-}
+
     body {
       font-family: Arial, sans-serif;
       background: #050507;
@@ -66,16 +64,7 @@ html{
       border-radius: 10px;
       color: white !important;
     }
-.menu-btn{
-  display:none;
-  font-size:28px;
-  cursor:pointer;
-  color:white;
-}
 
-.show{
-  display:flex !important;
-}
     .hero {
       min-height: 620px;
       display: flex;
@@ -223,8 +212,7 @@ html{
       color: #888;
       margin-bottom: 25px;
     }
-
-    footer {.ai-controls{
+.ai-controls{
 display:flex;
 justify-content:center;
 gap:10px;
@@ -239,365 +227,7 @@ border:1px solid #333;
 padding:12px;
 border-radius:10px;
 font-size:15px;
-}.ai-controls{
-margin-top:15px;
-display:flex;
-justify-content:center;
 }
-
-.ai-controls select{
-background:#111;
-color:white;
-border:1px solid #333;
-padding:12px;
-border-radius:10px;
-font-size:15px;
-}
-      padding: 30px 6%;
-      border-top: 1px solid #202024;
-      color: #666;
-      text-align: center;
-      font-size: 13px;
-    }
-
-    @media @media (max-width: 750px) {
-
-  .menu-btn{
-    display:block;
-  }
-
-  .nav-links{
-    display:none;
-    position:absolute;
-    top:70px;
-    left:0;
-    width:100%;
-    background:#0b0b10;
-    flex-direction:column;
-    padding:20px;
-    gap:15px;
-  }
-
-  .nav-links.show{
-    display:flex;
-  }
-
-  h1{
-    letter-spacing:-3px;
-  }
-
-  .grid{
-    grid-template-columns:1fr;
-  }
-
-  .hero{
-    min-height:580px;
-  }
-}
-  </style>
-</head>
-
-<body>
-
-  <nav>
-    <div class="logo">VFX<span>Studio</span></div>
-
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-
-    <div class="nav-links">
-      <a href="#create">Create</a>
-      <a href="#vfx">VFX Studio</a>
-      <a href="#prompt">Video → Prompt</a>
-      <a href="#projects">Projects</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#" class="login">Login</a>
-    </div>
-  </nav>
-
-  <section class="hero" id="create">
-    <div>
-      <div class="badge">✦ AI VIDEO + VFX STUDIO</div>
-
-      <h1>
-        Create <span>cinematic</span><br>
-        videos with AI.
-      </h1>
-
-      <p>
-        Turn your ideas, images and videos into stunning AI-generated
-        videos and professional VFX.
-      </p>
-<textarea
-id="promptInput"
-placeholder="Describe your video idea..."
-rows="4"
-style="
-width:100%;
-max-width:650px;
-padding:15px;
-background:#111;
-border:1px solid #333;
-border-radius:12px;
-color:white;
-margin-top:20px;
-"></textarea>
-<div class="ai-controls">
-
-<select id="quality">
-<option value="fast">⚡ Fast</option>
-<option value="hd">🎬 HD</option>
-<option value="ultra">🚀 Ultra HD</option>
-</select>
-
-<select id="duration">
-<option value="5">5 Seconds</option>
-<option value="10">10 Seconds</option>
-<option value="20">20 Seconds</option>
-<option value="30">30 Seconds</option>
-</select>
-
-</div>
-<div id="result"
-style="
-margin-top:20px;
-color:#c084fc;
-font-size:18px;
-"></div>
-      <div class="buttons">
-        <button class="btn primary" onclick="startCreating()">
-          ✨ Create Video
-        </button>
-
-        <button class="btn secondary" onclick="videoPrompt()">
-          🎬 Video → Prompt
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <section class="features" id="vfx">
-
-    <div class="section-title">
-      <h2>Everything you need to create.</h2>
-      <p>One powerful AI studio for video generation and VFX.</p>
-    </div>
-
-    <div class="grid">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VFX Studio — AI Video Generator</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #050507;
-      color: #fff;
-      min-height: 100vh;
-    }
-
-    nav {
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 6%;
-      border-bottom: 1px solid #202024;
-      background: rgba(5,5,7,0.95);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
-
-    .logo span {
-      color: #a855f7;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: #aaa;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .nav-links a:hover {
-      color: white;
-    }
-
-    .login {
-      border: 1px solid #333;
-      padding: 10px 18px;
-      border-radius: 10px;
-      color: white !important;
-    }
-
-    .hero {
-      min-height: 620px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 20px;
-      background:
-        radial-gradient(circle at 50% 25%, #3b1760 0%, transparent 30%),
-        radial-gradient(circle at 20% 70%, #11183d 0%, transparent 25%),
-        #050507;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 8px 14px;
-      border: 1px solid #39204d;
-      background: #120b19;
-      border-radius: 50px;
-      color: #c084fc;
-      font-size: 13px;
-      margin-bottom: 25px;
-    }
-
-    h1 {
-      font-size: clamp(45px, 8vw, 88px);
-      line-height: 0.98;
-      letter-spacing: -5px;
-      max-width: 950px;
-      margin: auto;
-    }
-
-    h1 span {
-      background: linear-gradient(90deg, #fff, #c084fc, #818cf8);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero p {
-      max-width: 650px;
-      margin: 28px auto;
-      color: #999;
-      font-size: 18px;
-      line-height: 1.6;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-
-    .btn {
-      border: none;
-      padding: 15px 25px;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .primary {
-      background: #fff;
-      color: #000;
-    }
-
-    .secondary {
-      background: #151519;
-      color: #fff;
-      border: 1px solid #303036;
-    }
-
-    .features {
-      padding: 80px 6%;
-      background: #08080b;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title h2 {
-      font-size: 38px;
-      margin-bottom: 12px;
-    }
-
-    .section-title p {
-      color: #888;
-    }
-
-    .grid {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      padding: 28px;
-      min-height: 190px;
-      background: #101014;
-      border: 1px solid #242429;
-      border-radius: 18px;
-      transition: 0.25s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: #7138a5;
-    }
-
-    .icon {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 19px;
-    }
-
-    .card p {
-      color: #888;
-      line-height: 1.5;
-      font-size: 14px;
-    }
-
-    .cta {
-      text-align: center;
-      padding: 100px 20px;
-      background:
-        radial-gradient(circle, #241035 0%, #08080b 50%);
-    }
-
-    .cta h2 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
-
-    .cta p {
-      color: #888;
-      margin-bottom: 25px;
-    }
-
     footer {
       padding: 30px 6%;
       border-top: 1px solid #202024;
@@ -654,7 +284,44 @@ font-size:18px;
         Turn your ideas, images and videos into stunning AI-generated
         videos and professional VFX.
       </p>
+<textarea
+id="promptInput"
+placeholder="Describe your video idea..."
+rows="4"
+style="
+width:100%;
+max-width:650px;
+padding:15px;
+background:#111;
+border:1px solid #333;
+border-radius:12px;
+color:white;
+margin-top:20px;
+"></textarea>
 
+<div class="ai-controls">
+
+<select id="quality">
+<option value="Fast">⚡ Fast</option>
+<option value="HD">🎬 HD</option>
+<option value="Ultra HD">🚀 Ultra HD</option>
+</select>
+
+<select id="duration">
+<option value="5">5 Seconds</option>
+<option value="10">10 Seconds</option>
+<option value="20">20 Seconds</option>
+<option value="30">30 Seconds</option>
+</select>
+
+</div>
+
+<div id="result"
+style="
+margin-top:20px;
+color:#c084fc;
+font-size:18px;
+"></div>
       <div class="buttons">
         <button class="btn primary" onclick="startCreating()">
           ✨ Create Video
@@ -742,15 +409,18 @@ font-size:18px;
   </footer>
 
   <script>
-    function startCreating() {
+
+function startCreating(){
 
 const prompt =
 document.getElementById("promptInput").value;
+
 const quality =
 document.getElementById("quality").value;
 
 const duration =
 document.getElementById("duration").value;
+
 if(prompt.trim() === ""){
 alert("Please enter a video prompt");
 return;
@@ -759,8 +429,14 @@ return;
 document.getElementById("result").innerHTML =
 "✅ Prompt: " + prompt +
 "<br>🎬 Quality: " + quality +
-"<br>⏱ Duration: " + duration + "s";
-    }
+"<br>⏱ Duration: " + duration + " Seconds" +
+"<br><br>🚀 AI Video Generation Started...";
+}
+
+function videoPrompt(){
+alert("Video → Prompt feature coming next 🎬");
+}
+
   </script>
 
 </body>

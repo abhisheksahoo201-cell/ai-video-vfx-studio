@@ -225,6 +225,21 @@ html{
     }
 
     footer {.ai-controls{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-top:15px;
+flex-wrap:wrap;
+}
+
+.ai-controls select{
+background:#111;
+color:white;
+border:1px solid #333;
+padding:12px;
+border-radius:10px;
+font-size:15px;
+}.ai-controls{
 margin-top:15px;
 display:flex;
 justify-content:center;
@@ -326,7 +341,22 @@ border-radius:12px;
 color:white;
 margin-top:20px;
 "></textarea>
+<div class="ai-controls">
 
+<select id="quality">
+<option value="fast">⚡ Fast</option>
+<option value="hd">🎬 HD</option>
+<option value="ultra">🚀 Ultra HD</option>
+</select>
+
+<select id="duration">
+<option value="5">5 Seconds</option>
+<option value="10">10 Seconds</option>
+<option value="20">20 Seconds</option>
+<option value="30">30 Seconds</option>
+</select>
+
+</div>
 <div id="result"
 style="
 margin-top:20px;
@@ -716,15 +746,20 @@ font-size:18px;
 
 const prompt =
 document.getElementById("promptInput").value;
+const quality =
+document.getElementById("quality").value;
 
+const duration =
+document.getElementById("duration").value;
 if(prompt.trim() === ""){
 alert("Please enter a video prompt");
 return;
 }
 
 document.getElementById("result").innerHTML =
-"✅ Prompt Received: " + prompt;
-
+"✅ Prompt: " + prompt +
+"<br>🎬 Quality: " + quality +
+"<br>⏱ Duration: " + duration + "s";
     }
   </script>
 

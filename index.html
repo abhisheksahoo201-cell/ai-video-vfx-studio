@@ -11,7 +11,9 @@
       margin: 0;
       padding: 0;
     }
-
+html{
+  scroll-behavior:smooth;
+}
     body {
       font-family: Arial, sans-serif;
       background: #050507;
@@ -64,7 +66,16 @@
       border-radius: 10px;
       color: white !important;
     }
+.menu-btn{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+  color:white;
+}
 
+.show{
+  display:flex !important;
+}
     .hero {
       min-height: 620px;
       display: flex;
@@ -221,23 +232,40 @@
       font-size: 13px;
     }
 
-    @media (max-width: 750px) {
-      .nav-links a:not(.login) {
-        display: none;
-      }
+    @media @media (max-width: 750px) {
 
-      h1 {
-        letter-spacing: -3px;
-      }
+  .menu-btn{
+    display:block;
+  }
 
-      .grid {
-        grid-template-columns: 1fr;
-      }
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#0b0b10;
+    flex-direction:column;
+    padding:20px;
+    gap:15px;
+  }
 
-      .hero {
-        min-height: 580px;
-      }
-    }
+  .nav-links.show{
+    display:flex;
+  }
+
+  h1{
+    letter-spacing:-3px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    min-height:580px;
+  }
+}
   </style>
 </head>
 
@@ -245,6 +273,8 @@
 
   <nav>
     <div class="logo">VFX<span>Studio</span></div>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
     <div class="nav-links">
       <a href="#create">Create</a>
@@ -355,8 +385,13 @@
   <footer id="pricing">
     © 2026 VFXStudio — AI Video & VFX Studio
   </footer>
-
+  
   <script>
+    function toggleMenu(){
+  document
+    .querySelector(".nav-links")
+    .classList.toggle("show");
+    }
 function startCreating() {
     const prompt = window.prompt(
         "🎬 Create Video\n\nApne video ka idea likho:",

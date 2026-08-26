@@ -408,40 +408,56 @@ font-size:18px;
     © 2026 VFXStudio — AI Video & VFX Studio
   </footer>
 
-  <script>
+<script>
+async function startCreating() {
 
-function startCreating() {
+  const prompt =
+    document.getElementById("promptInput").value;
 
-const prompt =
-document.getElementById("promptInput").value;
+  const quality =
+    document.getElementById("quality").value;
 
-const quality =
-document.getElementById("quality").value;
+  const duration =
+    document.getElementById("duration").value;
 
-const duration =
-document.getElementById("duration").value;
+  if (prompt.trim() === "") {
+    alert("Please enter a video prompt");
+    return;
+  }
 
-if(prompt.trim()===""){
-alert("Please enter a video prompt");
-return;
+  document.getElementById("result").innerHTML =
+    "⏳ Generating Video...";
+
+  try {
+
+    const response = await fetch(
+      "https://vfx-studio.onrender.com/generate-video",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          prompt: prompt,
+          quality: quality,
+          duration: duration
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    document.getElementById("result").innerHTML =
+      "<pre>" + JSON.stringify(data, null, 2) + "</pre>";
+
+  } catch (error) {
+
+    document.getElementById("result").innerHTML =
+      "❌ Error: " + error.message;
+
+  }
 }
-
-document.getElementById("result").innerHTML =
-"⏳ Generating Video...";
-
-setTimeout(() => {
-
-document.getElementById("result").innerHTML =
-"✅ Prompt: " + prompt +
-"<br>🎬 Quality: " + quality +
-"<br>⏱ Duration: " + duration + "s" +
-"<br><br>🚀 Video Generated Successfully";
-
-},2000);
-
-}
-
-  </script>
+</script>
 
 </body>
 </html>

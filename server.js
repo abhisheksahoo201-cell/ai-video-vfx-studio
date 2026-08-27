@@ -24,18 +24,23 @@ app.post("/generate-video", async (req, res) => {
     console.log("API Key Found:", !!process.env.LUMA_API_KEY);
 
     const response = await fetch(
-      "https://api.lumalabs.ai/dream-machine/v1/generations",
-      {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${process.env.LUMA_API_KEY}`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          prompt: prompt
-        })
-      }
-    );
+  "https://api.lumalabs.ai/dream-machine/v1/generations/video",
+  {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${process.env.LUMA_API_KEY}`,
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify({
+      prompt: prompt,
+      model: "ray-2",
+      aspect_ratio: "16:9",
+      resolution: "720p",
+      duration: "5s"
+    })
+  }
+);
 
     const data = await response.json();
 

@@ -1,489 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VFX Studio — AI Video Generator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VISION AI</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #050507;
-      color: #fff;
-      min-height: 100vh;
-    }
-
-    nav {
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 6%;
-      border-bottom: 1px solid #202024;
-      background: rgba(5,5,7,0.95);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
-
-    .logo span {
-      color: #a855f7;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: #aaa;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .nav-links a:hover {
-      color: white;
-    }
-
-    .login {
-      border: 1px solid #333;
-      padding: 10px 18px;
-      border-radius: 10px;
-      color: white !important;
-    }
-
-    .hero {
-      min-height: 620px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 20px;
-      background:
-        radial-gradient(circle at 50% 25%, #3b1760 0%, transparent 30%),
-        radial-gradient(circle at 20% 70%, #11183d 0%, transparent 25%),
-        #050507;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 8px 14px;
-      border: 1px solid #39204d;
-      background: #120b19;
-      border-radius: 50px;
-      color: #c084fc;
-      font-size: 13px;
-      margin-bottom: 25px;
-    }
-
-    h1 {
-      font-size: clamp(45px, 8vw, 88px);
-      line-height: 0.98;
-      letter-spacing: -5px;
-      max-width: 950px;
-      margin: auto;
-    }
-
-    h1 span {
-      background: linear-gradient(90deg, #fff, #c084fc, #818cf8);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero p {
-      max-width: 650px;
-      margin: 28px auto;
-      color: #999;
-      font-size: 18px;
-      line-height: 1.6;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-
-    .btn {
-      border: none;
-      padding: 15px 25px;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .primary {
-      background: #fff;
-      color: #000;
-    }
-
-    .secondary {
-      background: #151519;
-      color: #fff;
-      border: 1px solid #303036;
-    }
-
-    .features {
-      padding: 80px 6%;
-      background: #08080b;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title h2 {
-      font-size: 38px;
-      margin-bottom: 12px;
-    }
-
-    .section-title p {
-      color: #888;
-    }
-
-    .grid {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      padding: 28px;
-      min-height: 190px;
-      background: #101014;
-      border: 1px solid #242429;
-      border-radius: 18px;
-      transition: 0.25s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: #7138a5;
-    }
-
-    .icon {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 19px;
-    }
-
-    .card p {
-      color: #888;
-      line-height: 1.5;
-      font-size: 14px;
-    }
-
-    .cta {
-      text-align: center;
-      padding: 100px 20px;
-      background:
-        radial-gradient(circle, #241035 0%, #08080b 50%);
-    }
-
-    .cta h2 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
-
-    .cta p {
-      color: #888;
-      margin-bottom: 25px;
-    }
-.ai-controls{
-display:flex;
-justify-content:center;
-gap:10px;
-margin-top:15px;
-flex-wrap:wrap;
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
-.ai-controls select{
-background:#111;
+body{
+background:#0a0f1f;
 color:white;
-border:1px solid #333;
-padding:12px;
-border-radius:10px;
-font-size:15px;
+padding:20px;
 }
-    footer {
-      padding: 30px 6%;
-      border-top: 1px solid #202024;
-      color: #666;
-      text-align: center;
-      font-size: 13px;
-    }
 
-    @media (max-width: 750px) {
-      .nav-links a:not(.login) {
-        display: none;
-      }
+.container{
+max-width:1200px;
+margin:auto;
+}
 
-      h1 {
-        letter-spacing: -3px;
-      }
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+border:1px solid rgba(255,255,255,.1);
+border-radius:20px;
+background:rgba(255,255,255,.05);
+}
 
-      .grid {
-        grid-template-columns: 1fr;
-      }
+.logo{
+font-size:30px;
+font-weight:bold;
+}
 
-      .hero {
-        min-height: 580px;
-      }
-    }
-  </style>
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+.hero{
+text-align:center;
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#aaa;
+}
+
+.prompt-box{
+margin-top:40px;
+background:#111827;
+padding:20px;
+border-radius:20px;
+}
+
+textarea{
+width:100%;
+height:120px;
+padding:15px;
+border:none;
+outline:none;
+border-radius:10px;
+background:#1f2937;
+color:white;
+}
+
+.tabs{
+display:flex;
+gap:10px;
+margin-bottom:15px;
+}
+
+.tabs button{
+padding:12px 20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+background:#2563eb;
+color:white;
+}
+
+.generate-btn{
+margin-top:15px;
+width:100%;
+padding:15px;
+font-size:18px;
+background:#00c896;
+border:none;
+border-radius:12px;
+color:white;
+cursor:pointer;
+}
+
+.preview{
+margin-top:40px;
+background:#111827;
+padding:20px;
+border-radius:20px;
+}
+
+.options{
+display:flex;
+justify-content:space-between;
+margin-bottom:20px;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.ratio button,
+.duration button{
+padding:10px 15px;
+border:none;
+border-radius:10px;
+background:#1f2937;
+color:white;
+cursor:pointer;
+}
+
+.video-box{
+height:350px;
+border:2px dashed #444;
+border-radius:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#777;
+}
+
+.tools{
+margin-top:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.tool{
+background:#111827;
+padding:25px;
+border-radius:15px;
+text-align:center;
+cursor:pointer;
+}
+
+footer{
+margin-top:50px;
+padding:20px;
+text-align:center;
+border-top:1px solid #333;
+}
+</style>
 </head>
 
 <body>
 
-  <nav>
-    <div class="logo">VFX<span>Studio</span></div>
+<div class="container">
 
-    <div class="nav-links">
-      <a href="#create">Create</a>
-      <a href="#vfx">VFX Studio</a>
-      <a href="#prompt">Video → Prompt</a>
-      <a href="#projects">Projects</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#" class="login">Login</a>
-    </div>
-  </nav>
+<header>
+<div class="logo">VISION AI</div>
 
-  <section class="hero" id="create">
-    <div>
-      <div class="badge">✦ AI VIDEO + VFX STUDIO</div>
+<nav>
+<a href="#">Features</a>
+<a href="#">Pricing</a>
+<a href="#">Showcase</a>
+<a href="#">Community</a>
+</nav>
 
-      <h1>
-        Create <span>cinematic</span><br>
-        videos with AI.
-      </h1>
+<button style="padding:10px 20px;border:none;border-radius:10px;">
+Login
+</button>
+</header>
 
-      <p>
-        Turn your ideas, images and videos into stunning AI-generated
-        videos and professional VFX.
-      </p>
-<textarea
-id="promptInput"
-placeholder="Describe your video idea..."
-rows="4"
-style="
-width:100%;
-max-width:650px;
-padding:15px;
-background:#111;
-border:1px solid #333;
-border-radius:12px;
-color:white;
-margin-top:20px;
-"></textarea>
+<section class="hero">
+<h1>Transform Ideas Into Cinematic AI Videos</h1>
 
-<div class="ai-controls">
+<p>
+Create professional AI videos from text or images
+with powerful cinematic controls.
+</p>
 
-<select id="quality">
-<option value="Fast">⚡ Fast</option>
-<option value="HD">🎬 HD</option>
-<option value="Ultra HD">🚀 Ultra HD</option>
-</select>
+<div class="prompt-box">
 
-<select id="duration">
-<option value="5">5 Seconds</option>
-<option value="10">10 Seconds</option>
-<option value="20">20 Seconds</option>
-<option value="30">30 Seconds</option>
-</select>
+<div class="tabs">
+<button>Text → Video</button>
+<button>Image → Video</button>
+</div>
+
+<textarea placeholder="Describe your video idea..."></textarea>
+
+<button class="generate-btn">
+Generate Video
+</button>
+
+</div>
+</section>
+
+<section class="preview">
+
+<div class="options">
+
+<div class="ratio">
+<button>16:9</button>
+<button>9:16</button>
+<button>1:1</button>
+</div>
+
+<div class="duration">
+<button>5s</button>
+<button>10s</button>
+<button>20s</button>
+<button>30s</button>
+</div>
 
 </div>
 
-<div id="result"
-style="
-margin-top:20px;
-color:#c084fc;
-font-size:18px;
-"></div>
-      <div class="buttons">
-        <button class="btn primary" onclick="startCreating()">
-          ✨ Create Video
-        </button>
+<div class="video-box">
+Your Generated Video Will Appear Here
+</div>
 
-        <button class="btn secondary" onclick="videoPrompt()">
-          🎬 Video → Prompt
-        </button>
-      </div>
-    </div>
-  </section>
+</section>
 
-  <section class="features" id="vfx">
+<section class="tools">
 
-    <div class="section-title">
-      <h2>Everything you need to create.</h2>
-      <p>One powerful AI studio for video generation and VFX.</p>
-    </div>
+<div class="tool">Video → Prompt</div>
 
-    <div class="grid">
+<div class="tool">Video → Clip Splitter</div>
 
-      <div class="card">
-        <div class="icon">🎬</div>
-        <h3>Text → Video</h3>
-        <p>
-          Describe your idea and turn a simple prompt into a cinematic video.
-        </p>
-      </div>
+<div class="tool">AI VFX</div>
 
-      <div class="card">
-        <div class="icon">🖼️</div>
-        <h3>Image → Video</h3>
-        <p>
-          Animate your images with realistic camera movement and cinematic motion.
-        </p>
-      </div>
+<div class="tool">Smart Object VFX</div>
 
-      <div class="card" id="prompt">
-        <div class="icon">🎥</div>
-        <h3>Video → Prompt</h3>
-        <p>
-          Upload a reference video and let AI understand its scene, camera,
-          movement and style.
-        </p>
-      </div>
+<div class="tool">VFX Remix</div>
 
-      <div class="card">
-        <div class="icon">⚡</div>
-        <h3>AI VFX</h3>
-        <p>
-          Add fire, smoke, lightning, explosions, rain, energy and cinematic effects.
-        </p>
-      </div>
+<div class="tool">Animate Image</div>
 
-      <div class="card">
-        <div class="icon">🎯</div>
-        <h3>Smart Object VFX</h3>
-        <p>
-          Track objects and apply effects naturally to moving people, cars and scenes.
-        </p>
-      </div>
+</section>
 
-      <div class="card">
-        <div class="icon">🔥</div>
-        <h3>VFX Remix</h3>
-        <p>
-          Analyze a reference VFX video and recreate its visual style on your footage.
-        </p>
-      </div>
+<footer>
+THANK YOU FOR USING OUR AI
+</footer>
 
-    </div>
-  </section>
-
-  <section class="cta" id="projects">
-    <h2>Your next video starts here.</h2>
-    <p>Create something impossible with AI.</p>
-
-    <button class="btn primary" onclick="startCreating()">
-      Start Creating ✨
-    </button>
-  </section>
-
-  <footer id="pricing">
-    © 2026 VFXStudio — AI Video & VFX Studio
-  </footer>
-
-<script>
-async function startCreating() {
-
-  const prompt =
-    document.getElementById("promptInput").value;
-
-  const quality =
-    document.getElementById("quality").value;
-
-  const duration =
-    document.getElementById("duration").value;
-
-  if (prompt.trim() === "") {
-    alert("Please enter a video prompt");
-    return;
-  }
-
-  document.getElementById("result").innerHTML =
-    "⏳ Generating Video...";
-
-  try {
-
-    const response = await fetch(
-      "https://vfx-studio.onrender.com/generate-video",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          prompt: prompt,
-          quality: quality,
-          duration: duration
-        })
-      }
-    );
-
-const data = await response.json();
-
-if(data.video_url){
-
-  document.getElementById("result").innerHTML = `
-    <h3>✅ Video Generated</h3>
-
-    <video controls autoplay
-      style="
-      width:100%;
-      max-width:700px;
-      margin-top:15px;
-      border-radius:12px;
-      ">
-      <source src="${data.video_url}" type="video/mp4">
-    </video>
-
-    <br><br>
-
-    <a href="${data.video_url}" target="_blank">
-      📥 Download Video
-    </a>
-  `;
-
-}else{
-
-  document.getElementById("result").innerHTML =
-    "<pre>" + JSON.stringify(data, null, 2) + "</pre>";
-
-}
-
-} catch (error) {
-
-  document.getElementById("result").innerHTML =
-    "❌ Error: " + error.message;
-
-    }
-}
-</script>
+</div>
 
 </body>
 </html>

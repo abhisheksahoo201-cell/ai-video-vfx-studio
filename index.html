@@ -6,22 +6,32 @@
 <title>VISION AI</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Segoe UI',sans-serif;
 }
 
 body{
-background:#0a0f1f;
 color:white;
 padding:20px;
+min-height:100vh;
+overflow-x:hidden;
+background:
+radial-gradient(circle at top left,#8b5cf6 0%,transparent 30%),
+radial-gradient(circle at top right,#ec4899 0%,transparent 30%),
+radial-gradient(circle at bottom,#3b82f6 0%,transparent 40%),
+#050816;
+background-attachment:fixed;
 }
 
 .container{
 max-width:1200px;
 margin:auto;
+position:relative;
+z-index:2;
 }
 
 header{
@@ -29,96 +39,132 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px;
+border-radius:25px;
+background:rgba(255,255,255,.06);
+backdrop-filter:blur(20px);
 border:1px solid rgba(255,255,255,.1);
-border-radius:20px;
-background:rgba(255,255,255,.05);
+box-shadow:0 0 30px rgba(139,92,246,.2);
 }
 
 .logo{
-font-size:30px;
-font-weight:bold;
+font-size:32px;
+font-weight:900;
+background:linear-gradient(90deg,#fff,#c084fc,#60a5fa);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+nav{
+display:flex;
+gap:20px;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin-left:20px;
+font-weight:600;
+}
+
+.login-btn{
+padding:12px 24px;
+border:none;
+border-radius:12px;
+font-weight:bold;
+cursor:pointer;
+background:linear-gradient(90deg,#8b5cf6,#ec4899);
+color:white;
 }
 
 .hero{
 text-align:center;
-padding:60px 20px;
+padding:80px 20px;
 }
 
 .hero h1{
-font-size:50px;
+font-size:clamp(48px,8vw,90px);
+font-weight:900;
+line-height:1.1;
 margin-bottom:20px;
+background:linear-gradient(90deg,#fff,#d8b4fe,#60a5fa);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .hero p{
 max-width:700px;
 margin:auto;
-color:#aaa;
+font-size:18px;
+color:#d1d5db;
 }
 
 .prompt-box{
 margin-top:40px;
-background:#111827;
-padding:20px;
-border-radius:20px;
-}
-
-textarea{
-width:100%;
-height:120px;
-padding:15px;
-border:none;
-outline:none;
-border-radius:10px;
-background:#1f2937;
-color:white;
+padding:25px;
+border-radius:25px;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(25px);
+border:1px solid rgba(255,255,255,.1);
+box-shadow:0 0 50px rgba(168,85,247,.2);
 }
 
 .tabs{
 display:flex;
-gap:10px;
-margin-bottom:15px;
+gap:12px;
+margin-bottom:20px;
+flex-wrap:wrap;
 }
 
 .tabs button{
-padding:12px 20px;
+padding:14px 22px;
 border:none;
-border-radius:10px;
+border-radius:12px;
 cursor:pointer;
-background:#2563eb;
+font-weight:700;
 color:white;
+background:linear-gradient(90deg,#8b5cf6,#ec4899);
+}
+
+textarea{
+width:100%;
+height:140px;
+padding:20px;
+border:none;
+outline:none;
+border-radius:15px;
+background:rgba(255,255,255,.08);
+color:white;
+font-size:16px;
 }
 
 .generate-btn{
-margin-top:15px;
+margin-top:20px;
 width:100%;
-padding:15px;
+padding:18px;
 font-size:18px;
-background:#00c896;
+font-weight:700;
 border:none;
-border-radius:12px;
-color:white;
+border-radius:15px;
 cursor:pointer;
+color:white;
+background:linear-gradient(90deg,#8b5cf6,#ec4899);
+box-shadow:0 0 25px rgba(236,72,153,.4);
 }
 
 .preview{
 margin-top:40px;
-background:#111827;
-padding:20px;
-border-radius:20px;
+padding:25px;
+border-radius:25px;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(25px);
+border:1px solid rgba(255,255,255,.1);
 }
 
 .options{
 display:flex;
 justify-content:space-between;
-margin-bottom:20px;
 flex-wrap:wrap;
 gap:10px;
+margin-bottom:20px;
 }
 
 .ratio button,
@@ -126,19 +172,20 @@ gap:10px;
 padding:10px 15px;
 border:none;
 border-radius:10px;
-background:#1f2937;
-color:white;
 cursor:pointer;
+color:white;
+background:linear-gradient(90deg,#8b5cf6,#3b82f6);
 }
 
 .video-box{
 height:350px;
-border:2px dashed #444;
-border-radius:15px;
+border-radius:20px;
 display:flex;
 align-items:center;
 justify-content:center;
-color:#777;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.1);
+color:#ddd;
 }
 
 .tools{
@@ -149,27 +196,90 @@ gap:20px;
 }
 
 .tool{
-background:#111827;
 padding:25px;
-border-radius:15px;
+border-radius:20px;
 text-align:center;
 cursor:pointer;
+font-weight:700;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.1);
+transition:.4s;
+}
+
+.tool:hover{
+transform:translateY(-8px);
+box-shadow:0 0 30px rgba(236,72,153,.4);
 }
 
 footer{
 margin-top:50px;
-padding:20px;
+padding:25px;
 text-align:center;
-border-top:1px solid #333;
+border-top:1px solid rgba(255,255,255,.1);
+color:#ddd;
 }
+
+/* Floating Glow Effects */
+
+.glow1{
+position:fixed;
+width:350px;
+height:350px;
+background:#8b5cf6;
+filter:blur(150px);
+top:-100px;
+left:-100px;
+opacity:.35;
+z-index:1;
+}
+
+.glow2{
+position:fixed;
+width:350px;
+height:350px;
+background:#ec4899;
+filter:blur(150px);
+bottom:-100px;
+right:-100px;
+opacity:.35;
+z-index:1;
+}
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.logo{
+font-size:42px;
+}
+
+.hero h1{
+font-size:58px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
+<div class="glow1"></div>
+<div class="glow2"></div>
+
 <div class="container">
 
 <header>
+
 <div class="logo">VISION AI</div>
 
 <nav>
@@ -179,17 +289,16 @@ border-top:1px solid #333;
 <a href="#">Community</a>
 </nav>
 
-<button style="padding:10px 20px;border:none;border-radius:10px;">
-Login
-</button>
+<button class="login-btn">Login</button>
+
 </header>
 
 <section class="hero">
+
 <h1>Transform Ideas Into Cinematic AI Videos</h1>
 
 <p>
-Create professional AI videos from text or images
-with powerful cinematic controls.
+Create professional AI videos from text or images with powerful cinematic controls.
 </p>
 
 <div class="prompt-box">
@@ -206,6 +315,7 @@ Generate Video
 </button>
 
 </div>
+
 </section>
 
 <section class="preview">
@@ -236,15 +346,10 @@ Your Generated Video Will Appear Here
 <section class="tools">
 
 <div class="tool">Video → Prompt</div>
-
 <div class="tool">Video → Clip Splitter</div>
-
 <div class="tool">AI VFX</div>
-
 <div class="tool">Smart Object VFX</div>
-
 <div class="tool">VFX Remix</div>
-
 <div class="tool">Animate Image</div>
 
 </section>

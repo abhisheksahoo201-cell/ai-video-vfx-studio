@@ -268,7 +268,337 @@ z-index:0;
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
 }
+  /* Floating Particles */
 
+.particle{
+    position:fixed;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:white;
+    opacity:.6;
+    pointer-events:none;
+    z-index:1;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 20px #8b5cf6;
+
+    animation:floatParticle linear infinite;
+}
+
+@keyframes floatParticle{
+
+    from{
+        transform:
+            translateY(110vh)
+            translateX(0);
+    }
+
+    to{
+        transform:
+            translateY(-10vh)
+            translateX(80px);
+    }
+
+}
+/* ================================
+   3D PREMIUM EFFECTS
+================================ */
+
+/* Aurora Background */
+.aurora{
+    position:fixed;
+    inset:-50%;
+    z-index:0;
+    pointer-events:none;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(139,92,246,.35), transparent 25%),
+        radial-gradient(circle at 80% 20%, rgba(236,72,153,.30), transparent 25%),
+        radial-gradient(circle at 50% 80%, rgba(59,130,246,.30), transparent 30%);
+    filter:blur(60px);
+    animation:auroraMove 18s ease-in-out infinite alternate;
+}
+
+@keyframes auroraMove{
+    0%{
+        transform:translate3d(-5%,-3%,0) rotate(0deg) scale(1);
+    }
+    50%{
+        transform:translate3d(5%,3%,0) rotate(8deg) scale(1.08);
+    }
+    100%{
+        transform:translate3d(-3%,5%,0) rotate(-8deg) scale(1.15);
+    }
+}
+
+
+/* Mouse Follow Glow */
+.mouse-glow{
+    position:fixed;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:1;
+    background:radial-gradient(
+        circle,
+        rgba(168,85,247,.25),
+        rgba(236,72,153,.10),
+        transparent 70%
+    );
+    transform:translate(-50%,-50%);
+    filter:blur(20px);
+    transition:transform .08s linear;
+}
+
+
+/* Floating Particles */
+.particle{
+    position:fixed;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:white;
+    opacity:.6;
+    pointer-events:none;
+    z-index:1;
+    box-shadow:
+        0 0 10px #fff,
+        0 0 20px #8b5cf6;
+    animation:floatParticle linear infinite;
+}
+
+@keyframes floatParticle{
+    from{
+        transform:translateY(110vh) translateX(0);
+    }
+    to{
+        transform:translateY(-10vh) translateX(80px);
+    }
+}
+
+
+/* Animated Gradient Border */
+.gradient-border{
+    position:relative;
+    border:none !important;
+    background:
+        linear-gradient(#090b1a,#090b1a) padding-box,
+        linear-gradient(
+            90deg,
+            #8b5cf6,
+            #ec4899,
+            #3b82f6,
+            #06b6d4,
+            #8b5cf6
+        ) border-box !important;
+    border:2px solid transparent !important;
+    background-size:100% 100%,400% 100%;
+    animation:borderMove 6s linear infinite;
+}
+
+@keyframes borderMove{
+    0%{
+        background-position:0 0,0% 50%;
+    }
+    100%{
+        background-position:0 0,400% 50%;
+    }
+}
+
+
+/* 3D Glass Cards */
+.tool,
+.pricing-card,
+.showcase-card{
+    transform-style:preserve-3d;
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.tool:hover,
+.pricing-card:hover,
+.showcase-card:hover{
+    transform:
+        perspective(1000px)
+        rotateX(6deg)
+        rotateY(-6deg)
+        translateY(-10px)
+        scale(1.02);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.4),
+        0 0 40px rgba(139,92,246,.35);
+}
+
+
+/* Premium Pricing */
+.pricing-section{
+    margin-top:70px;
+    text-align:center;
+}
+
+.pricing-title{
+    font-size:42px;
+    margin-bottom:35px;
+    font-weight:900;
+}
+
+.pricing-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+}
+
+.pricing-card{
+    padding:30px;
+    border-radius:25px;
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(25px);
+    border:1px solid rgba(255,255,255,.12);
+    position:relative;
+    overflow:hidden;
+}
+
+.pricing-card::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.15),
+        transparent
+    );
+    transform:translateX(-100%);
+    transition:.7s;
+}
+
+.pricing-card:hover::before{
+    transform:translateX(100%);
+}
+
+.price{
+    font-size:42px;
+    font-weight:900;
+    margin:20px 0;
+}
+
+.price-btn{
+    width:100%;
+    padding:14px;
+    border:0;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    background:linear-gradient(
+        90deg,
+        #8b5cf6,
+        #ec4899
+    );
+}
+
+
+/* AI Showcase */
+.showcase{
+    margin-top:70px;
+    text-align:center;
+}
+
+.showcase h2{
+    font-size:42px;
+    margin-bottom:30px;
+}
+
+.carousel{
+    display:flex;
+    gap:25px;
+    overflow-x:auto;
+    padding:20px 5px 30px;
+    scroll-behavior:smooth;
+}
+
+.carousel::-webkit-scrollbar{
+    height:6px;
+}
+
+.carousel::-webkit-scrollbar-thumb{
+    background:linear-gradient(
+        90deg,
+        #8b5cf6,
+        #ec4899
+    );
+    border-radius:20px;
+}
+
+.showcase-card{
+    min-width:280px;
+    padding:20px;
+    border-radius:25px;
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.showcase-image{
+    height:180px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:50px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139,92,246,.5),
+            rgba(236,72,153,.4)
+        );
+    margin-bottom:15px;
+}
+
+.carousel-controls{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:15px;
+}
+
+.carousel-controls button{
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #ec4899
+    );
+}
+
+
+/* Mobile */
+@media(max-width:768px){
+
+    .pricing-title,
+    .showcase h2{
+        font-size:32px;
+    }
+
+    .pricing-grid{
+        grid-template-columns:1fr;
+    }
+
+    .mouse-glow{
+        display:none;
+    }
+  }
 .badge{
 display:inline-block;
 padding:10px 18px;
@@ -339,7 +669,18 @@ font-size:58px;
 <div class="animated-bg"></div>
 <div class="glow1"></div>
 <div class="glow2"></div>
-
+<div class="particle" style="left:5%;animation-duration:12s;"></div>
+<div class="particle" style="left:15%;animation-duration:17s;"></div>
+<div class="particle" style="left:25%;animation-duration:14s;"></div>
+<div class="particle" style="left:35%;animation-duration:20s;"></div>
+<div class="particle" style="left:45%;animation-duration:15s;"></div>
+<div class="particle" style="left:55%;animation-duration:18s;"></div>
+<div class="particle" style="left:65%;animation-duration:13s;"></div>
+<div class="particle" style="left:75%;animation-duration:19s;"></div>
+<div class="particle" style="left:85%;animation-duration:16s;"></div>
+<div class="particle" style="left:95%;animation-duration:21s;"></div>
+<div class="aurora"></div>
+<div class="mouse-glow" id="mouseGlow"></div>
 <div class="container">
 
 <header>

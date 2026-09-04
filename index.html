@@ -696,7 +696,151 @@ filter:blur(25px);
 opacity:.4;
 z-index:-1;
 }
+/* =========================================
+   PREMIUM TOOLS SECTION
+   AI CREATION STUDIO STYLE
+========================================= */
 
+.tools-section{
+    margin-top:50px;
+    padding:25px;
+    border-radius:28px;
+
+    background:rgba(255,255,255,.055);
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.25),
+        0 0 40px rgba(139,92,246,.12);
+}
+
+.tools-title{
+    font-size:28px;
+    font-weight:900;
+    margin-bottom:8px;
+}
+
+.tools-subtitle{
+    color:#bfc3d4;
+    margin-bottom:25px;
+    font-size:16px;
+}
+
+.premium-tools{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.premium-tool{
+    position:relative;
+
+    padding:28px 22px;
+
+    min-height:130px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    background:rgba(255,255,255,.055);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    backdrop-filter:blur(20px);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+    overflow:hidden;
+}
+
+.premium-tool::before{
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,.12),
+            transparent
+        );
+
+    transform:translateX(-100%);
+
+    transition:.7s;
+}
+
+.premium-tool:hover::before{
+    transform:translateX(100%);
+}
+
+.premium-tool:hover{
+    transform:
+        perspective(1000px)
+        rotateX(5deg)
+        rotateY(-5deg)
+        translateY(-7px)
+        scale(1.02);
+
+    border-color:rgba(192,132,252,.7);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.35),
+        0 0 30px rgba(139,92,246,.3);
+}
+
+.premium-tool-icon{
+    font-size:32px;
+    margin-bottom:12px;
+}
+
+.premium-tool-name{
+    font-size:18px;
+    font-weight:800;
+}
+
+.premium-tool-description{
+    margin-top:7px;
+    font-size:13px;
+    color:#aeb4c7;
+    line-height:1.5;
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .tools-section{
+        margin-top:40px;
+        padding:18px;
+    }
+
+    .tools-title{
+        font-size:24px;
+    }
+
+    .premium-tools{
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+
+    .premium-tool{
+        min-height:115px;
+        padding:22px;
+    }
+
+   }
 </style>
 </head>
 
@@ -823,35 +967,130 @@ Your Generated Video Will Appear Here
 </div>
 
 </section>
+<!-- =========================================
+     PREMIUM AI TOOLS
+========================================= -->
+
+<section class="tools-section">
+
+    <div class="tools-title">
+        🛠️ AI Video Tools
+    </div>
+
+    <div class="tools-subtitle">
+        Powerful AI tools to transform and enhance your videos.
+    </div>
 
 
-<section class="tools">
+    <div class="premium-tools">
 
-<div class="tool">
-Video → Prompt
-</div>
 
-<div class="tool">
-Video → Clip Splitter
-</div>
+        <div class="premium-tool">
 
-<div class="tool">
-AI VFX
-</div>
+            <div class="premium-tool-icon">
+                🎯
+            </div>
 
-<div class="tool">
-Smart Object VFX
-</div>
+            <div class="premium-tool-name">
+                Video → Prompt
+            </div>
 
-<div class="tool">
-VFX Remix
-</div>
+            <div class="premium-tool-description">
+                Turn your video into a detailed AI prompt.
+            </div>
 
-<div class="tool">
-Animate your Video
-</div>
+        </div>
+
+
+        <div class="premium-tool">
+
+            <div class="premium-tool-icon">
+                ✂️
+            </div>
+
+            <div class="premium-tool-name">
+                Video → Clip Splitter
+            </div>
+
+            <div class="premium-tool-description">
+                Automatically split your video into clips.
+            </div>
+
+        </div>
+
+
+        <div class="premium-tool">
+
+            <div class="premium-tool-icon">
+                ✨
+            </div>
+
+            <div class="premium-tool-name">
+                AI VFX
+            </div>
+
+            <div class="premium-tool-description">
+                Add cinematic AI visual effects to your videos.
+            </div>
+
+        </div>
+
+
+        <div class="premium-tool">
+
+            <div class="premium-tool-icon">
+                🎯
+            </div>
+
+            <div class="premium-tool-name">
+                Smart Object VFX
+            </div>
+
+            <div class="premium-tool-description">
+                Apply effects intelligently to selected objects.
+            </div>
+
+        </div>
+
+
+        <div class="premium-tool">
+
+            <div class="premium-tool-icon">
+                🔥
+            </div>
+
+            <div class="premium-tool-name">
+                VFX Remix
+            </div>
+
+            <div class="premium-tool-description">
+                Remix your video with powerful AI effects.
+            </div>
+
+        </div>
+
+
+        <div class="premium-tool">
+
+            <div class="premium-tool-icon">
+                🎬
+            </div>
+
+            <div class="premium-tool-name">
+                Animate your Video
+            </div>
+
+            <div class="premium-tool-description">
+                Bring your video to life with AI animation.
+            </div>
+
+        </div>
+
+
+    </div>
 
 </section>
+
 
 
 <footer>

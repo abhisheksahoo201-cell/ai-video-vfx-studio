@@ -245,6 +245,7 @@ right:-100px;
 opacity:.35;
 z-index:1;
 }
+
 .animated-bg{
 position:fixed;
 top:0;
@@ -268,386 +269,392 @@ z-index:0;
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
 }
-  /* Floating Particles */
+
+/* Floating Particles */
 
 .particle{
-    position:fixed;
-    width:4px;
-    height:4px;
-    border-radius:50%;
-    background:white;
-    opacity:.6;
-    pointer-events:none;
-    z-index:1;
+position:fixed;
+width:4px;
+height:4px;
+border-radius:50%;
+background:white;
+opacity:.6;
+pointer-events:none;
+z-index:1;
 
-    box-shadow:
-        0 0 10px white,
-        0 0 20px #8b5cf6;
+box-shadow:
+0 0 10px white,
+0 0 20px #8b5cf6;
 
-    animation:floatParticle linear infinite;
+animation:floatParticle linear infinite;
 }
 
 @keyframes floatParticle{
 
-    from{
-        transform:
-            translateY(110vh)
-            translateX(0);
-    }
+from{
+transform:
+translateY(110vh)
+translateX(0);
+}
 
-    to{
-        transform:
-            translateY(-10vh)
-            translateX(80px);
-    }
+to{
+transform:
+translateY(-10vh)
+translateX(80px);
+}
 
 }
-  /* 🌼 Floating Flower Particles */
+
+/* 🌼 Floating Flower Particles */
 
 .flower{
-    position:fixed;
-    bottom:-50px;
-    font-size:24px;
-    pointer-events:none;
-    z-index:1;
-    opacity:.75;
-    filter:drop-shadow(0 0 8px rgba(255,255,255,.5));
-    animation:flowerFloat linear infinite;
+position:fixed;
+bottom:-50px;
+font-size:24px;
+pointer-events:none;
+z-index:1;
+opacity:.75;
+filter:drop-shadow(0 0 8px rgba(255,255,255,.5));
+animation:flowerFloat linear infinite;
 }
 
 @keyframes flowerFloat{
 
-    0%{
-        transform:
-            translateY(0)
-            translateX(0)
-            rotate(0deg)
-            scale(.8);
-        opacity:0;
-    }
-
-    10%{
-        opacity:.8;
-    }
-
-    50%{
-        transform:
-            translateY(-50vh)
-            translateX(70px)
-            rotate(180deg)
-            scale(1);
-    }
-
-    90%{
-        opacity:.8;
-    }
-
-    100%{
-        transform:
-            translateY(-115vh)
-            translateX(-60px)
-            rotate(360deg)
-            scale(.7);
-        opacity:0;
-    }
+0%{
+transform:
+translateY(0)
+translateX(0)
+rotate(0deg)
+scale(.8);
+opacity:0;
 }
-/* ================================
+
+10%{
+opacity:.8;
+}
+
+50%{
+transform:
+translateY(-50vh)
+translateX(70px)
+rotate(180deg)
+scale(1);
+}
+
+90%{
+opacity:.8;
+}
+
+100%{
+transform:
+translateY(-115vh)
+translateX(-60px)
+rotate(360deg)
+scale(.7);
+opacity:0;
+}
+
+}
+
+/* =========================================
    3D PREMIUM EFFECTS
-================================ */
+========================================= */
 
 /* Aurora Background */
+
 .aurora{
-    position:fixed;
-    inset:-50%;
-    z-index:0;
-    pointer-events:none;
-    background:
-        radial-gradient(circle at 20% 30%, rgba(139,92,246,.35), transparent 25%),
-        radial-gradient(circle at 80% 20%, rgba(236,72,153,.30), transparent 25%),
-        radial-gradient(circle at 50% 80%, rgba(59,130,246,.30), transparent 30%);
-    filter:blur(60px);
-    animation:auroraMove 18s ease-in-out infinite alternate;
+position:fixed;
+inset:-50%;
+z-index:0;
+pointer-events:none;
+background:
+radial-gradient(circle at 20% 30%, rgba(139,92,246,.35), transparent 25%),
+radial-gradient(circle at 80% 20%, rgba(236,72,153,.30), transparent 25%),
+radial-gradient(circle at 50% 80%, rgba(59,130,246,.30), transparent 30%);
+filter:blur(60px);
+animation:auroraMove 18s ease-in-out infinite alternate;
 }
 
 @keyframes auroraMove{
-    0%{
-        transform:translate3d(-5%,-3%,0) rotate(0deg) scale(1);
-    }
-    50%{
-        transform:translate3d(5%,3%,0) rotate(8deg) scale(1.08);
-    }
-    100%{
-        transform:translate3d(-3%,5%,0) rotate(-8deg) scale(1.15);
-    }
+
+0%{
+transform:translate3d(-5%,-3%,0) rotate(0deg) scale(1);
 }
 
+50%{
+transform:translate3d(5%,3%,0) rotate(8deg) scale(1.08);
+}
+
+100%{
+transform:translate3d(-3%,5%,0) rotate(-8deg) scale(1.15);
+}
+
+}
 
 /* Mouse Follow Glow */
+
 .mouse-glow{
-    position:fixed;
-    width:300px;
-    height:300px;
-    border-radius:50%;
-    pointer-events:none;
-    z-index:1;
-    background:radial-gradient(
-        circle,
-        rgba(168,85,247,.25),
-        rgba(236,72,153,.10),
-        transparent 70%
-    );
-    transform:translate(-50%,-50%);
-    filter:blur(20px);
-    transition:transform .08s linear;
+position:fixed;
+width:300px;
+height:300px;
+border-radius:50%;
+pointer-events:none;
+z-index:1;
+background:radial-gradient(
+circle,
+rgba(168,85,247,.25),
+rgba(236,72,153,.10),
+transparent 70%
+);
+transform:translate(-50%,-50%);
+filter:blur(20px);
+transition:transform .08s linear;
 }
-
-
-/* Floating Particles */
-.particle{
-    position:fixed;
-    width:4px;
-    height:4px;
-    border-radius:50%;
-    background:white;
-    opacity:.6;
-    pointer-events:none;
-    z-index:1;
-    box-shadow:
-        0 0 10px #fff,
-        0 0 20px #8b5cf6;
-    animation:floatParticle linear infinite;
-}
-
-@keyframes floatParticle{
-    from{
-        transform:translateY(110vh) translateX(0);
-    }
-    to{
-        transform:translateY(-10vh) translateX(80px);
-    }
-}
-
 
 /* Animated Gradient Border */
+
 .gradient-border{
-    position:relative;
-    border:none !important;
-    background:
-        linear-gradient(#090b1a,#090b1a) padding-box,
-        linear-gradient(
-            90deg,
-            #8b5cf6,
-            #ec4899,
-            #3b82f6,
-            #06b6d4,
-            #8b5cf6
-        ) border-box !important;
-    border:2px solid transparent !important;
-    background-size:100% 100%,400% 100%;
-    animation:borderMove 6s linear infinite;
+position:relative;
+border:none !important;
+background:
+linear-gradient(#090b1a,#090b1a) padding-box,
+linear-gradient(
+90deg,
+#8b5cf6,
+#ec4899,
+#3b82f6,
+#06b6d4,
+#8b5cf6
+) border-box !important;
+border:2px solid transparent !important;
+background-size:100% 100%,400% 100%;
+animation:borderMove 6s linear infinite;
 }
 
 @keyframes borderMove{
-    0%{
-        background-position:0 0,0% 50%;
-    }
-    100%{
-        background-position:0 0,400% 50%;
-    }
+
+0%{
+background-position:0 0,0% 50%;
 }
 
+100%{
+background-position:0 0,400% 50%;
+}
+
+}
 
 /* 3D Glass Cards */
+
 .tool,
 .pricing-card,
 .showcase-card{
-    transform-style:preserve-3d;
-    transition:
-        transform .4s ease,
-        box-shadow .4s ease;
+transform-style:preserve-3d;
+transition:
+transform .4s ease,
+box-shadow .4s ease;
 }
 
 .tool:hover,
 .pricing-card:hover,
 .showcase-card:hover{
-    transform:
-        perspective(1000px)
-        rotateX(6deg)
-        rotateY(-6deg)
-        translateY(-10px)
-        scale(1.02);
+transform:
+perspective(1000px)
+rotateX(6deg)
+rotateY(-6deg)
+translateY(-10px)
+scale(1.02);
 
-    box-shadow:
-        0 25px 60px rgba(0,0,0,.4),
-        0 0 40px rgba(139,92,246,.35);
+box-shadow:
+0 25px 60px rgba(0,0,0,.4),
+0 0 40px rgba(139,92,246,.35);
 }
 
-
 /* Premium Pricing */
+
 .pricing-section{
-    margin-top:70px;
-    text-align:center;
+margin-top:70px;
+text-align:center;
 }
 
 .pricing-title{
-    font-size:42px;
-    margin-bottom:35px;
-    font-weight:900;
+font-size:42px;
+margin-bottom:35px;
+font-weight:900;
 }
 
 .pricing-grid{
-    display:grid;
-    grid-template-columns:
-        repeat(auto-fit,minmax(240px,1fr));
-    gap:25px;
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
 }
 
 .pricing-card{
-    padding:30px;
-    border-radius:25px;
-    background:rgba(255,255,255,.06);
-    backdrop-filter:blur(25px);
-    border:1px solid rgba(255,255,255,.12);
-    position:relative;
-    overflow:hidden;
+padding:30px;
+border-radius:25px;
+background:rgba(255,255,255,.06);
+backdrop-filter:blur(25px);
+border:1px solid rgba(255,255,255,.12);
+position:relative;
+overflow:hidden;
 }
 
 .pricing-card::before{
-    content:"";
-    position:absolute;
-    inset:-2px;
-    background:linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,.15),
-        transparent
-    );
-    transform:translateX(-100%);
-    transition:.7s;
+content:"";
+position:absolute;
+inset:-2px;
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.15),
+transparent
+);
+transform:translateX(-100%);
+transition:.7s;
 }
 
 .pricing-card:hover::before{
-    transform:translateX(100%);
+transform:translateX(100%);
 }
 
 .price{
-    font-size:42px;
-    font-weight:900;
-    margin:20px 0;
+font-size:42px;
+font-weight:900;
+margin:20px 0;
 }
 
 .price-btn{
-    width:100%;
-    padding:14px;
-    border:0;
-    border-radius:12px;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-    background:linear-gradient(
-        90deg,
-        #8b5cf6,
-        #ec4899
-    );
+width:100%;
+padding:14px;
+border:0;
+border-radius:12px;
+color:white;
+font-weight:bold;
+cursor:pointer;
+background:linear-gradient(
+90deg,
+#8b5cf6,
+#ec4899
+);
 }
 
-
 /* AI Showcase */
+
 .showcase{
-    margin-top:70px;
-    text-align:center;
+margin-top:70px;
+text-align:center;
 }
 
 .showcase h2{
-    font-size:42px;
-    margin-bottom:30px;
+font-size:42px;
+margin-bottom:30px;
 }
 
 .carousel{
-    display:flex;
-    gap:25px;
-    overflow-x:auto;
-    padding:20px 5px 30px;
-    scroll-behavior:smooth;
+display:flex;
+gap:25px;
+overflow-x:auto;
+padding:20px 5px 30px;
+scroll-behavior:smooth;
 }
 
 .carousel::-webkit-scrollbar{
-    height:6px;
+height:6px;
 }
 
 .carousel::-webkit-scrollbar-thumb{
-    background:linear-gradient(
-        90deg,
-        #8b5cf6,
-        #ec4899
-    );
-    border-radius:20px;
+background:linear-gradient(
+90deg,
+#8b5cf6,
+#ec4899
+);
+border-radius:20px;
 }
 
 .showcase-card{
-    min-width:280px;
-    padding:20px;
-    border-radius:25px;
-    background:rgba(255,255,255,.06);
-    backdrop-filter:blur(20px);
-    border:1px solid rgba(255,255,255,.1);
+min-width:280px;
+padding:20px;
+border-radius:25px;
+background:rgba(255,255,255,.06);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.1);
 }
 
 .showcase-image{
-    height:180px;
-    border-radius:18px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:50px;
-    background:
-        linear-gradient(
-            135deg,
-            rgba(139,92,246,.5),
-            rgba(236,72,153,.4)
-        );
-    margin-bottom:15px;
+height:180px;
+border-radius:18px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:50px;
+background:
+linear-gradient(
+135deg,
+rgba(139,92,246,.5),
+rgba(236,72,153,.4)
+);
+margin-bottom:15px;
 }
 
 .carousel-controls{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    margin-top:15px;
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:15px;
 }
 
 .carousel-controls button{
-    width:45px;
-    height:45px;
-    border:none;
-    border-radius:50%;
-    color:white;
-    cursor:pointer;
-    font-size:18px;
-    background:linear-gradient(
-        135deg,
-        #8b5cf6,
-        #ec4899
-    );
+width:45px;
+height:45px;
+border:none;
+border-radius:50%;
+color:white;
+cursor:pointer;
+font-size:18px;
+background:linear-gradient(
+135deg,
+#8b5cf6,
+#ec4899
+);
 }
 
-
 /* Mobile */
+
 @media(max-width:768px){
 
-    .pricing-title,
-    .showcase h2{
-        font-size:32px;
-    }
+.pricing-title,
+.showcase h2{
+font-size:32px;
+}
 
-    .pricing-grid{
-        grid-template-columns:1fr;
-    }
+.pricing-grid{
+grid-template-columns:1fr;
+}
 
-    .mouse-glow{
-        display:none;
-    }
-  }
+.mouse-glow{
+display:none;
+}
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.logo{
+font-size:42px;
+}
+
+.hero h1{
+font-size:58px;
+}
+
+}
+
 .badge{
 display:inline-block;
 padding:10px 18px;
@@ -688,202 +695,18 @@ background:linear-gradient(
 filter:blur(25px);
 opacity:.4;
 z-index:-1;
-                     }
-@media(max-width:768px){
-
-header{
-flex-direction:column;
-gap:15px;
 }
 
-nav{
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.logo{
-font-size:42px;
-}
-
-.hero h1{
-font-size:58px;
-}
-
-}
-/* =========================================
-   AI CREATION STUDIO - STEP 1
-========================================= */
-
-.creation-studio{
-    margin-top:30px;
-    padding:25px;
-    border-radius:28px;
-    background:rgba(255,255,255,.055);
-    backdrop-filter:blur(25px);
-    border:1px solid rgba(255,255,255,.12);
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.25),
-        0 0 40px rgba(139,92,246,.12);
-}
-
-.studio-title{
-    font-size:28px;
-    font-weight:900;
-    margin-bottom:8px;
-}
-
-.studio-subtitle{
-    color:#bfc3d4;
-    margin-bottom:25px;
-}
-
-.creation-modes{
-    display:grid;
-    grid-template-columns:
-        repeat(auto-fit,minmax(180px,1fr));
-    gap:15px;
-}
-
-.creation-mode{
-    position:relative;
-    padding:20px;
-    border-radius:18px;
-    cursor:pointer;
-    text-align:left;
-    background:rgba(255,255,255,.055);
-    border:1px solid rgba(255,255,255,.10);
-    transition:.35s ease;
-    overflow:hidden;
-}
-
-.creation-mode:hover{
-    transform:translateY(-5px);
-    border-color:rgba(168,85,247,.7);
-    box-shadow:0 0 30px rgba(139,92,246,.25);
-}
-
-.creation-mode.active{
-    background:
-        linear-gradient(
-            135deg,
-            rgba(139,92,246,.25),
-            rgba(236,72,153,.18)
-        );
-    border:1px solid rgba(192,132,252,.8);
-    box-shadow:
-        0 0 25px rgba(139,92,246,.25),
-        inset 0 0 20px rgba(255,255,255,.03);
-}
-
-.mode-icon{
-    font-size:30px;
-    margin-bottom:10px;
-}
-
-.mode-name{
-    font-size:17px;
-    font-weight:800;
-}
-
-.mode-description{
-    margin-top:6px;
-    font-size:13px;
-    color:#aeb4c7;
-}
-
-.upload-area{
-    margin-top:25px;
-    padding:35px 20px;
-    border-radius:20px;
-    border:2px dashed rgba(255,255,255,.18);
-    background:rgba(255,255,255,.035);
-    text-align:center;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.upload-area:hover{
-    border-color:#c084fc;
-    background:rgba(139,92,246,.08);
-}
-
-.upload-icon{
-    font-size:45px;
-    margin-bottom:10px;
-}
-
-.upload-title{
-    font-size:18px;
-    font-weight:800;
-}
-
-.upload-text{
-    color:#aeb4c7;
-    font-size:14px;
-    margin-top:6px;
-}
-
-#mediaInput{
-    display:none;
-}
-
-.media-preview{
-    display:none;
-    margin-top:20px;
-    position:relative;
-}
-
-.media-preview img,
-.media-preview video{
-    width:100%;
-    max-height:400px;
-    object-fit:contain;
-    border-radius:18px;
-    background:#050816;
-    border:1px solid rgba(255,255,255,.12);
-}
-
-.remove-media{
-    position:absolute;
-    top:10px;
-    right:10px;
-    width:38px;
-    height:38px;
-    border:none;
-    border-radius:50%;
-    cursor:pointer;
-    color:white;
-    font-size:18px;
-    font-weight:bold;
-    background:rgba(0,0,0,.65);
-    backdrop-filter:blur(10px);
-}
-
-@media(max-width:768px){
-
-    .creation-studio{
-        padding:18px;
-    }
-
-    .creation-modes{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .creation-mode{
-        padding:15px;
-    }
-
-    .studio-title{
-        font-size:24px;
-    }
-  }
 </style>
 </head>
 
 <body>
+
 <div class="animated-bg"></div>
+
 <div class="glow1"></div>
 <div class="glow2"></div>
+
 <div class="particle" style="left:5%;animation-duration:12s;"></div>
 <div class="particle" style="left:15%;animation-duration:17s;"></div>
 <div class="particle" style="left:25%;animation-duration:14s;"></div>
@@ -894,7 +717,9 @@ font-size:58px;
 <div class="particle" style="left:75%;animation-duration:19s;"></div>
 <div class="particle" style="left:85%;animation-duration:16s;"></div>
 <div class="particle" style="left:95%;animation-duration:21s;"></div>
+
 <div class="aurora"></div>
+
 <!-- 🌼 Floating Flowers -->
 
 <div class="flower" style="left:8%;animation-duration:14s;animation-delay:1s;">🌼</div>
@@ -905,7 +730,9 @@ font-size:58px;
 <div class="flower" style="left:70%;animation-duration:20s;animation-delay:8s;">🌼</div>
 <div class="flower" style="left:82%;animation-duration:15s;animation-delay:5s;">🌼</div>
 <div class="flower" style="left:94%;animation-duration:19s;animation-delay:10s;">🌼</div>
+
 <div class="mouse-glow" id="mouseGlow"></div>
+
 <div class="container">
 
 <header>
@@ -923,11 +750,16 @@ font-size:58px;
 
 </header>
 
+
 <section class="hero">
+
 <div class="badge">
 🚀 Vision AI • Next Generation Video Creation
 </div>
-<h1>Transform Ideas Into Cinematic AI Videos</h1>
+
+<h1>
+Transform Ideas Into Cinematic AI Videos
+</h1>
 
 <p>
 Create professional AI videos from text or images with powerful cinematic controls.
@@ -936,11 +768,20 @@ Create professional AI videos from text or images with powerful cinematic contro
 <div class="prompt-box">
 
 <div class="tabs">
-<button>Text → Video</button>
-<button>Image → Video</button>
+
+<button>
+Text → Video
+</button>
+
+<button>
+Image → Video
+</button>
+
 </div>
 
-<textarea placeholder="Describe your video idea..."></textarea>
+<textarea
+placeholder="Describe your video idea..."
+></textarea>
 
 <button class="generate-btn">
 Generate Video
@@ -949,307 +790,98 @@ Generate Video
 </div>
 
 </section>
-<!-- =========================================
-     AI CREATION STUDIO - STEP 1
-========================================= -->
-
-<section class="creation-studio">
-
-    <div class="studio-title">
-        🎬 AI Creation Studio
-    </div>
-
-    <div class="studio-subtitle">
-        Choose how you want to create your next AI video.
-    </div>
-
-    <div class="creation-modes">
-
-        <div class="creation-mode active"
-             data-mode="text"
-             onclick="selectCreationMode('text')">
-
-            <div class="mode-icon">✍️</div>
-
-            <div class="mode-name">
-                Text → Video
-            </div>
-
-            <div class="mode-description">
-                Turn your idea into an AI video.
-            </div>
-
-        </div>
 
 
-        <div class="creation-mode"
-             data-mode="image"
-             onclick="selectCreationMode('image')">
-
-            <div class="mode-icon">🖼️</div>
-
-            <div class="mode-name">
-                Image → Video
-            </div>
-
-            <div class="mode-description">
-                Animate your image with AI.
-            </div>
-
-        </div>
-
-
-        <div class="creation-mode"
-             data-mode="video"
-             onclick="selectCreationMode('video')">
-
-            <div class="mode-icon">🎥</div>
-
-            <div class="mode-name">
-                Video → Video
-            </div>
-
-            <div class="mode-description">
-                Transform an existing video.
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="upload-area"
-         id="uploadArea"
-         onclick="document.getElementById('mediaInput').click()">
-
-        <div class="upload-icon">
-            ☁️
-        </div>
-
-        <div class="upload-title">
-            Upload Image or Video
-        </div>
-
-        <div class="upload-text">
-            Click to upload your media
-        </div>
-
-    </div>
-
-
-    <input
-        type="file"
-        id="mediaInput"
-        accept="image/*,video/*"
-    >
-
-
-    <div class="media-preview" id="mediaPreview">
-
-        <button
-            class="remove-media"
-            onclick="removeMedia(event)">
-            ✕
-        </button>
-
-        <img
-            id="imagePreview"
-            style="display:none;"
-            alt="Uploaded image"
-        >
-
-        <video
-            id="videoPreview"
-            style="display:none;"
-            controls>
-        </video>
-
-    </div>
-
-</section>
 <section class="preview">
 
 <div class="options">
 
 <div class="ratio">
+
 <button>16:9</button>
 <button>9:16</button>
 <button>1:1</button>
+
 </div>
 
 <div class="duration">
+
 <button>5s</button>
 <button>10s</button>
 <button>20s</button>
 <button>30s</button>
+
 </div>
 
 </div>
+
 
 <div class="video-box">
+
 Your Generated Video Will Appear Here
+
 </div>
 
 </section>
+
 
 <section class="tools">
 
-<div class="tool">Video → Prompt</div>
-<div class="tool">Video → Clip Splitter</div>
-<div class="tool">AI VFX</div>
-<div class="tool">Smart Object VFX</div>
-<div class="tool">VFX Remix</div>
-<div class="tool">Animate your Video</div>
+<div class="tool">
+Video → Prompt
+</div>
+
+<div class="tool">
+Video → Clip Splitter
+</div>
+
+<div class="tool">
+AI VFX
+</div>
+
+<div class="tool">
+Smart Object VFX
+</div>
+
+<div class="tool">
+VFX Remix
+</div>
+
+<div class="tool">
+Animate your Video
+</div>
 
 </section>
 
+
 <footer>
+
 THANK YOU FOR USING OUR AI
+
 </footer>
 
 </div>
+
 <script>
 
 /* =========================================
-   VISION AI - CREATION STUDIO
+   MOUSE FOLLOW GLOW
 ========================================= */
 
-let selectedCreationMode = "text";
+const mouseGlow =
+document.getElementById("mouseGlow");
 
+document.addEventListener("mousemove", function(e){
 
-function selectCreationMode(mode){
+mouseGlow.style.left =
+e.clientX + "px";
 
-    selectedCreationMode = mode;
-
-    const modes =
-        document.querySelectorAll(".creation-mode");
-
-    modes.forEach(function(item){
-
-        item.classList.remove("active");
-
-    });
-
-
-    const selected =
-        document.querySelector(
-            '.creation-mode[data-mode="' + mode + '"]'
-        );
-
-    if(selected){
-
-        selected.classList.add("active");
-
-    }
-
-
-    const uploadArea =
-        document.getElementById("uploadArea");
-
-
-    if(mode === "text"){
-
-        uploadArea.style.display = "none";
-
-    }
-    else{
-
-        uploadArea.style.display = "block";
-
-    }
-
-}
-
-
-/* =========================================
-   MEDIA UPLOAD
-========================================= */
-
-const mediaInput =
-    document.getElementById("mediaInput");
-
-
-mediaInput.addEventListener("change", function(){
-
-    const file = this.files[0];
-
-    if(!file) return;
-
-
-    const preview =
-        document.getElementById("mediaPreview");
-
-    const imagePreview =
-        document.getElementById("imagePreview");
-
-    const videoPreview =
-        document.getElementById("videoPreview");
-
-
-    preview.style.display = "block";
-
-
-    if(file.type.startsWith("image/")){
-
-        imagePreview.src =
-            URL.createObjectURL(file);
-
-        imagePreview.style.display =
-            "block";
-
-        videoPreview.style.display =
-            "none";
-
-    }
-
-
-    else if(file.type.startsWith("video/")){
-
-        videoPreview.src =
-            URL.createObjectURL(file);
-
-        videoPreview.style.display =
-            "block";
-
-        imagePreview.style.display =
-            "none";
-
-    }
+mouseGlow.style.top =
+e.clientY + "px";
 
 });
 
-
-/* =========================================
-   REMOVE UPLOADED MEDIA
-========================================= */
-
-function removeMedia(event){
-
-    event.stopPropagation();
-
-    mediaInput.value = "";
-
-    document.getElementById(
-        "mediaPreview"
-    ).style.display = "none";
-
-    document.getElementById(
-        "imagePreview"
-    ).style.display = "none";
-
-    document.getElementById(
-        "videoPreview"
-    ).style.display = "none";
-
-}
-
-
-/* =========================================
-   INITIAL STATE
-========================================= */
-
-selectCreationMode("text");
-
 </script>
+
 </body>
-</html>
+  </html>
